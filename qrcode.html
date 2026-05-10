@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code — المنتدى الجهوي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #f5f1eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 36px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+        }
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .logos img {
+            height: 65px;
+            object-fit: contain;
+        }
+
+        .title {
+            font-size: 1.15rem;
+            font-weight: 900;
+            color: #1b2a6b;
+            line-height: 1.6;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 0.82rem;
+            color: #f5a623;
+            font-weight: 700;
+            margin-bottom: 28px;
+        }
+
+        .qr-wrapper {
+            background: white;
+            border: 3px solid #1b2a6b;
+            border-radius: 16px;
+            padding: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        #qrcode canvas, #qrcode img {
+            display: block;
+        }
+
+        .scan-label {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1b2a6b;
+            margin-bottom: 8px;
+        }
+
+        .url-text {
+            font-size: 0.72rem;
+            color: #888;
+            word-break: break-all;
+            direction: ltr;
+            margin-bottom: 22px;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, #1b2a6b, #f5a623);
+            border-radius: 2px;
+            margin: 20px 0;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .info-badge {
+            background: #f0f4ff;
+            color: #1b2a6b;
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        .info-badge.orange {
+            background: #fff4e0;
+            color: #c47f00;
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .card { box-shadow: none; border-radius: 0; max-width: 100%; }
+        }
+
+        .btn-print {
+            display: inline-block;
+            margin-top: 24px;
+            background: #1b2a6b;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        @media print { .btn-print { display: none; } }
+    </style>
+</head>
+<body>
+<div class="card">
+
+    <div class="logos">
+        <img src="images/aref.jpg" alt="AREF">
+        <img src="images/menps.png" alt="Ministère">
+    </div>
+
+    <p class="title">المنتدى الجهوي حول منظومة التربية والتكوين</p>
+    <p class="subtitle">جهة الدار البيضاء‑سطات — 13 ماي 2026</p>
+
+    <div class="qr-wrapper">
+        <div id="qrcode"></div>
+    </div>
+
+    <p class="scan-label">امسح للاطلاع على وثائق المنتدى</p>
+    <p class="url-text">https://ticecrmefcs-ui.github.io/ForumAref-CS/</p>
+
+    <div class="divider"></div>
+
+    <div class="info-row">
+        <span class="info-badge orange">📅 الأربعاء 13 ماي 2026</span>
+        <span class="info-badge">📍 المركز الجهوي — الدار البيضاء</span>
+        <span class="info-badge">📥 وثائق قابلة للتحميل</span>
+    </div>
+
+    <button class="btn-print" onclick="window.print()">🖨️ طباعة</button>
+</div>
+
+<script>
+    new QRCode(document.getElementById("qrcode"), {
+        text: "https://ticecrmefcs-ui.github.io/ForumAref-CS/",
+        width: 260,
+        height: 260,
+        colorDark: "#1b2a6b",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+</script>
+</body>
+</html>
