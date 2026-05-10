@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المنتدى الجهوي حول منظومة التربية والتكوين</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #f5f1eb;
+            color: #1a1a2e;
+            direction: rtl;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: linear-gradient(160deg, #1b2a6b 0%, #1b2a6b 60%, #0d7a5f 100%);
+            padding: 25px 20px 35px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -60px; left: -60px;
+            width: 220px; height: 220px;
+            border-radius: 50%;
+            background: rgba(245,166,35,0.12);
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -80px; right: -40px;
+            width: 280px; height: 280px;
+            border-radius: 50%;
+            background: rgba(0,168,107,0.10);
+        }
+
+        .logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logos img {
+            height: 90px;
+            object-fit: contain;
+            background: white;
+            border-radius: 10px;
+            padding: 8px;
+        }
+
+        .header-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .tag-ministry {
+            display: inline-block;
+            background: rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.9);
+            font-size: 0.82rem;
+            padding: 5px 16px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero-title {
+            color: #ffffff;
+            font-size: 1.75rem;
+            font-weight: 900;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .hero-theme {
+            color: #f5a623;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .hero-subtitle {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.92rem;
+            margin-bottom: 22px;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .badge-date {
+            background: #f5a623;
+            color: white;
+        }
+
+        .badge-loc {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* ===== MAIN ===== */
+        main {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 30px 16px 50px;
+        }
+
+        /* Forum visual */
+        .forum-visual {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.18);
+            margin-bottom: 32px;
+            display: block;
+        }
+
+        /* Section heading */
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .section-heading .bar {
+            width: 6px;
+            height: 32px;
+            background: #f5a623;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
+        .section-heading h2 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #1b2a6b;
+        }
+
+        /* About card */
+        .about-card {
+            background: white;
+            border-radius: 14px;
+            padding: 28px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 18px rgba(0,0,0,0.07);
+        }
+
+        .about-card p {
+            font-size: 1rem;
+            line-height: 2;
+            color: #3a3a4a;
+        }
+
+        .about-card .highlight {
+            display: flex;
+            gap: 12px;
+            margin-top: 18px;
+            flex-wrap: wrap;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            background: #f0f4ff;
+            border-radius: 8px;
+            padding: 8px 14px;
+            font-size: 0.88rem;
+            color: #1b2a6b;
+            font-weight: 600;
+        }
+
+        /* Documents */
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 18px;
+            margin-bottom: 16px;
+        }
+
+        .doc-card {
+            background: white;
+            border-radius: 14px;
+            padding: 26px 22px;
+            box-shadow: 0 2px 18px rgba(0,0,0,0.07);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .doc-card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; left: 0;
+            height: 4px;
+        }
+
+        .doc-card.card-blue::before { background: linear-gradient(90deg, #1b2a6b, #3a52c4); }
+        .doc-card.card-green::before { background: linear-gradient(90deg, #0d7a5f, #25b08a); }
+
+        .doc-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.14);
+        }
+
+        .doc-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+        }
+
+        .doc-icon.icon-blue { background: linear-gradient(135deg, #1b2a6b, #3a52c4); }
+        .doc-icon.icon-green { background: linear-gradient(135deg, #0d7a5f, #25b08a); }
+
+        .doc-card h3 {
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .doc-card p {
+            font-size: 0.86rem;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 22px;
+            flex: 1;
+        }
+
+        .doc-meta {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.78rem;
+            color: #999;
+            margin-bottom: 16px;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 13px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            width: 100%;
+            transition: opacity 0.2s, transform 0.15s;
+        }
+
+        .btn-download:hover {
+            opacity: 0.88;
+            transform: scale(0.98);
+        }
+
+        .btn-blue {
+            background: linear-gradient(135deg, #1b2a6b, #3a52c4);
+            color: white;
+        }
+
+        .btn-green {
+            background: linear-gradient(135deg, #0d7a5f, #25b08a);
+            color: white;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #1b2a6b;
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            padding: 24px 20px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        footer .footer-sep {
+            width: 40px;
+            height: 2px;
+            background: #f5a623;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        footer .footer-small {
+            font-size: 0.78rem;
+            opacity: 0.55;
+            margin-top: 6px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 560px) {
+            .hero-title { font-size: 1.3rem; }
+            .logos img { height: 70px; }
+            header { padding: 20px 15px 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logos">
+        <img src="images/aref.jpg" alt="الأكاديمية الجهوية للتربية والتكوين - الدار البيضاء سطات">
+        <img src="images/menps.png" alt="وزارة التربية الوطنية والتعليم الأولي والرياضة">
+    </div>
+    <div class="header-content">
+        <div class="tag-ministry">المملكة المغربية &nbsp;|&nbsp; وزارة التربية الوطنية والتعليم الأولي والرياضة</div>
+        <h1 class="hero-title">المنتدى الجهوي<br>حول منظومة التربية والتكوين</h1>
+        <p class="hero-theme">جهة الدار البيضاء‑سطات: قاطرة للمدرسة المغربية الجديدة</p>
+        <p class="hero-subtitle">تشخيص الحصيلة واستشراف رهانات ما بعد 2026</p>
+        <div class="hero-badges">
+            <span class="badge badge-date">📅&nbsp; الأربعاء 13 ماي 2026</span>
+            <span class="badge badge-loc">📍&nbsp; المركز الجهوي لمهن التربية والتكوين — الدار البيضاء</span>
+        </div>
+    </div>
+</header>
+
+<!-- MAIN -->
+<main>
+
+    <!-- Forum visual -->
+    <img src="image.jpeg" alt="الإطار العام للمنتدى الجهوي" class="forum-visual">
+
+    <!-- About -->
+    <div class="section-heading">
+        <div class="bar"></div>
+        <h2>حول المنتدى</h2>
+    </div>
+    <div class="about-card">
+        <p>
+            ينظم المنتدى الجهوي حول منظومة التربية والتكوين بجهة الدار البيضاء‑سطات في إطار مساعي تقييم مسار الإصلاح التربوي وتجديد رؤيته الاستراتيجية. يشكّل هذا الملتقى فضاءً للحوار والتشاور بين مختلف الفاعلين التربويين بهدف تشخيص الحصيلة المُنجزة واستشراف رهانات ما بعد 2026 نحو مدرسة مغربية جديدة متجذرة وذات جودة.
+        </p>
+        <div class="highlight">
+            <div class="highlight-item">🏫&nbsp; التعليم والتكوين</div>
+            <div class="highlight-item">📊&nbsp; تقييم الحصيلة</div>
+            <div class="highlight-item">🔭&nbsp; رهانات ما بعد 2026</div>
+            <div class="highlight-item">🌍&nbsp; جهة الدار البيضاء‑سطات</div>
+        </div>
+    </div>
+
+    <!-- Documents -->
+    <div class="section-heading">
+        <div class="bar"></div>
+        <h2>وثائق المنتدى للتحميل</h2>
+    </div>
+    <div class="docs-grid">
+
+        <div class="doc-card card-blue">
+            <div class="doc-icon icon-blue">📋</div>
+            <h3>برنامج المنتدى الجهوي</h3>
+            <p>البرنامج التفصيلي للمنتدى يشمل جميع الجلسات والتدخلات والجداول الزمنية المبرمجة طيلة يوم المنتدى.</p>
+            <div class="doc-meta">📄&nbsp; ملف PDF</div>
+            <a href="PROGRAME .pdf" download="برنامج المنتدى الجهوي.pdf" class="btn-download btn-blue">
+                ⬇&nbsp; تحميل البرنامج
+            </a>
+        </div>
+
+        <div class="doc-card card-green">
+            <div class="doc-icon icon-green">📄</div>
+            <h3>الإطار العام للمنتدى الجهوي</h3>
+            <p>الوثيقة المرجعية التي تحدد التوجهات والمرتكزات والأهداف العامة للمنتدى في ضوء مسار إصلاح المنظومة التربوية.</p>
+            <div class="doc-meta">📄&nbsp; ملف PDF</div>
+            <a href="الإطار العام للمنتدى الجهوي مدمج.pdf" download="الإطار العام للمنتدى الجهوي.pdf" class="btn-download btn-green">
+                ⬇&nbsp; تحميل الوثيقة
+            </a>
+        </div>
+
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <p>المنتدى الجهوي حول منظومة التربية والتكوين</p>
+    <div class="footer-sep"></div>
+    <p>الأكاديمية الجهوية للتربية والتكوين لجهة الدار البيضاء‑سطات</p>
+    <p class="footer-small">وزارة التربية الوطنية والتعليم الأولي والرياضة &nbsp;—&nbsp; 2026</p>
+</footer>
+
+</body>
+</html>
